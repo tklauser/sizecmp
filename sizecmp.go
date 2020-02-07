@@ -41,8 +41,8 @@ func main() {
 	}
 	sort.Strings(keys)
 
-	var total1, total2 int64
 	for _, kk := range keys {
+		var total1, total2 int64
 		fmt.Printf("== %s ==\n", kk)
 		for k, _ := range sz1[kk] {
 			s1 := sz1[kk][k]
@@ -51,8 +51,8 @@ func main() {
 			total1 += s1
 			total2 += s2
 		}
+		fmt.Printf("%30s %11d %11d %+11d\n", "total", total1, total2, total2-total1)
 	}
-	fmt.Printf("%30s %11d %11d %+11d\n", "total", total1, total2, total2-total1)
 }
 
 // readSize reads a file containing the output of the `size` command.
