@@ -96,7 +96,11 @@ func readSize(file string) map[string]map[string]int64 {
 		sizes := make(map[string]int64)
 		for i, field := range fields {
 			if i < 5 {
-				v, err := strconv.ParseInt(field, 16, 64)
+				base := 10
+				if header[i] == "hex" {
+					base = 16
+				}
+				v, err := strconv.ParseInt(field, base, 64)
 				if err != nil {
 					log.Fatal(err)
 				}
