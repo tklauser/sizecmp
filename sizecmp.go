@@ -51,15 +51,11 @@ func main() {
 
 		fmt.Printf("== %s ==\n", kk)
 
-		var total1, total2 int64
 		for _, k := range skeys {
 			s1 := sz1[kk][k]
 			s2 := sz2[kk][k]
 			fmt.Printf("%-30s %11d %11d %+11d\n", k, s1, s2, s2-s1)
-			total1 += s1
-			total2 += s2
 		}
-		fmt.Printf("%30s %11d %11d %+11d\n", "total", total1, total2, total2-total1)
 	}
 }
 
