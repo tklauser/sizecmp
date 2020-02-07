@@ -19,7 +19,7 @@ import (
 
 func main() {
 	if len(os.Args) != 3 {
-		fmt.Fprintf(os.Stderr, "usage: sizecmp old.txt new.txt")
+		fmt.Fprintf(os.Stderr, "usage: sizecmp old.txt new.txt\n")
 		os.Exit(1)
 	}
 
