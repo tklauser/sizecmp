@@ -54,7 +54,11 @@ func main() {
 		for _, k := range skeys {
 			s1 := sz1[kk][k]
 			s2 := sz2[kk][k]
-			fmt.Printf("%-30s %11d %11d %+11d\n", k, s1, s2, s2-s1)
+			if k == "hex" {
+				fmt.Printf("%-30s %11x %11x %+11x\n", k, s1, s2, s2-s1)
+			} else {
+				fmt.Printf("%-30s %11d %11d %+11d\n", k, s1, s2, s2-s1)
+			}
 		}
 	}
 }
